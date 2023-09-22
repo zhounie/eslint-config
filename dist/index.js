@@ -1,3 +1,12 @@
+// src/config/javascript.ts
+var javascript = [
+  {
+    rules: {
+      "no-console": "error"
+    }
+  }
+];
+
 // src/plugins.ts
 import { default as default2 } from "eslint-plugin-vue";
 import { default as default3 } from "@typescript-eslint/eslint-plugin";
@@ -49,6 +58,7 @@ var typescript = [
 // src/default.ts
 function zhounie(options = {}) {
   const config = [];
+  config.push(...javascript);
   if (options.typescript) {
     config.push(...typescript);
   }

@@ -1,5 +1,5 @@
 
-import { vue, typescript  } from './config'
+import { vue, typescript, javascript  } from './config'
 import { type FlatESLintConfigItem } from 'eslint-define-config'
 
 interface Options {
@@ -10,6 +10,7 @@ interface Options {
 export function zhounie (options: Options = {}): FlatESLintConfigItem[] {
 
     const config: FlatESLintConfigItem[] = []
+    config.push(...javascript)
 
     if (options.typescript) {
         config.push(...typescript)
