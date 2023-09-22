@@ -1,0 +1,32 @@
+{
+  "name": "@iszhounie/eslint-config",
+  "version": "1.0.1",
+  "packageManager": "pnpm@8.6.11",
+  "description": "Eslint Config.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --clean --dts",
+    "release": "npm version patch && npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "eslint": "^8.49.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint-define-config": "^1.23.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "vue-eslint-parser": "^9.3.1"
+  }
+}
