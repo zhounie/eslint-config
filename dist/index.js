@@ -2,7 +2,7 @@
 var javascript = [
   {
     rules: {
-      "no-console": "error"
+      "no-console": "warn"
     }
   }
 ];
