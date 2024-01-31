@@ -19,25 +19,28 @@ var GLOB_TSX = "**/*.tsx";
 var GLOB_VUE = "**/*.vue";
 
 // src/config/vue.ts
-var vue = [
-  {
-    files: [GLOB_VUE],
-    languageOptions: {
-      parser: default4,
-      parserOptions: {
-        sourceType: "module",
-        extraFileExtensions: [".vue"],
-        ecmaFeatures: {
-          jsx: true
+var vue = (options) => {
+  return [
+    {
+      files: [GLOB_VUE],
+      languageOptions: {
+        parser: default4,
+        parserOptions: {
+          sourceType: "module",
+          extraFileExtensions: [".vue"],
+          ecmaFeatures: {
+            jsx: true
+          },
+          parser: options.typescript ? default5 : void 0
         }
-      }
-    },
-    plugins: {
-      vue: default2
-    },
-    processor: default2.processors[".vue"]
-  }
-];
+      },
+      plugins: {
+        vue: default2
+      },
+      processor: default2.processors[".vue"]
+    }
+  ];
+};
 
 // src/config/typescript.ts
 var typescript = [
@@ -63,7 +66,7 @@ function zhounie(options = {}) {
     config.push(...typescript);
   }
   if (options.vue) {
-    config.push(...vue);
+    config.push(...vue({ typescript: !!options.typescript }));
   }
   return config;
 }
