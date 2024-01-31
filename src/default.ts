@@ -17,7 +17,7 @@ export function zhounie (options: Options = {}): FlatESLintConfigItem[] {
     }
 
     if (options.vue) {
-        config.push(...vue)
+        config.push(...vue({typescript: !!options.typescript}))
     }
 
     return config
