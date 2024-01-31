@@ -1,6 +1,6 @@
 {
   "name": "@iszhounie/eslint-config",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "packageManager": "pnpm@8.6.11",
   "description": "Eslint Config.",
   "type": "module",
